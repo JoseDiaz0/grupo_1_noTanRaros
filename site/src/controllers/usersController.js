@@ -8,6 +8,14 @@ let controller = {
     },
     profile: (req, res) => {
         res.render('users/profile.ejs', { title: 'Perfil | NoTanRaros' });
+    },
+    stor: (req, res) => {
+        let user = {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email
+        }
+        res.send(user)
     }
 }
 

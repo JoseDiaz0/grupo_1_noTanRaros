@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
+
 /* View Engine Setup */
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -28,6 +29,7 @@ const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const adminRouter = require('./routes/admin');
 const seriesRouter = require('./routes/series');
+const logMiddleware = require('./middlewares/logMiddleware');
 
 /* Middlewares de rutas */
 app.use('/', indexRouter);
@@ -35,7 +37,7 @@ app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/admin', adminRouter);
 app.use('/series', seriesRouter);
-
+app.use(logMiddleware);
 
 
 app.listen(PORT, () => {

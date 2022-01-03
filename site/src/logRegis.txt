@@ -1,0 +1,1 @@
+ Se creo un registro al ingresar a la ruta /profile Se creo un registro al ingresar a la ruta /register Se creo un registro al ingresar a la ruta /login
